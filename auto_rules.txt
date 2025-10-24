@@ -1,0 +1,15 @@
+# format:
+# <matcher_type>:<value> -> template:<template_name>
+# matcher_type = contains | prefix | suffix | exact | regex
+#
+# Explanation
+# exact    | exact:stone -> template:stone_block          | Will only match if the input is exactly "stone".
+# contains | contains:wall -> template:andesite_wall      | Fits: "andesite wall", "wallpaper", "stone wall and door".
+# prefix   | prefix:oak_ -> template:oak_planks           | Matches: "**oak_**planks", "**oak_**door", "**oak_**log". Does not match: "dark_oak_planks".
+# suffix   | suffix:_door -> template:oak_door            | Matches: "oak**_door**", "iron**_door**", "trap**_door**". Does not match: "door_handle".
+# regex    | regex:.*stairs.* -> template:andesite_stairs | Matches: "oak_stairs", "wooden stairs", "dark_oak_stairs_block". .* means "any number of arbitrary characters".
+#
+#
+# Dictionary
+contains:wall -> template:andesite_wall
+contains:door -> template:oak_door
